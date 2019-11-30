@@ -1,0 +1,82 @@
+﻿@model IEnumerable<MovieWebApp.Models.Movies>
+
+
+@{
+    List<int> pages = ViewBag.Pages;
+    int pageCurrent = ViewBag.PageCurrent;
+    ViewBag.Title = "Movies";
+}
+
+
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Movies</h2>
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    Наименование
+                </th>
+                <th>
+                    Описание
+                </th>
+                <th>
+                    Режиссёр
+                </th>
+                <th>
+                    Год
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var movie in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(x => movie.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => movie.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => movie.Producer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => movie.Year)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = movie.ID }) |
+                        @Html.ActionLink("Detail", "Detail", new { id = movie.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = movie.ID })
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <ul class="pagination">
+            <li>
+                @Html.ActionLink("Назад", "Index", new { page = pages.Min() - 1 })
+            </li>
+            @foreach (var pageNumber in pages)
+            {
+                <li>
+                    @Html.ActionLink(@pageNumber.ToString(), "Index", new { page = pageNumber })
+                </li>
+            }
+            <li>
+                @Html.ActionLink("Вперед", "Index", new { page = pages.Max() + 1 })
+            </li>
+        </ul>
+
+    </div>
+
+</div>
