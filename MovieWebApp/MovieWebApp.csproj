@@ -252,6 +252,7 @@
     <Content Include="Models\MoviesModel.edmx.diagram">
       <DependentUpon>MoviesModel.edmx</DependentUpon>
     </Content>
+    <Content Include="App_Data\Тестовое задание на вакансию Asp.Net-разработчик.pdf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
