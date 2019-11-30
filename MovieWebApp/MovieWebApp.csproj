@@ -302,6 +302,7 @@
     <Content Include="Views\Movies\Edit.cshtml" />
     <Content Include="Views\Movies\Detail.cshtml" />
     <Content Include="Views\Movies\Delete.cshtml" />
+    <Content Include="_Documentations\Тестовое задание на вакансию Asp.Net-разработчик.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\" />
